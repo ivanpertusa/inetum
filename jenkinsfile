@@ -1,1 +1,32 @@
-
+// Pipeline Declarativo (siempre comienza por pipeline)
+pipeline {
+    // Ejecturar en cualquier agente (nodo)
+    agent any
+    
+    //Fases del trabajo
+    stages {
+        // Fase individual (Contenedor logico)
+        stage('Build') {
+            // Pasos de la fase
+            steps {
+                echo 'Building ...'
+            }
+        }
+        
+        stage('Test') {
+            // Pasos de la fase
+            steps {
+                echo 'Unit test ...'
+                echo 'Unit test 2 ...'
+                echo 'Unit test 3...'
+            }
+        }
+        
+        stage('Deploy') {
+            // Pasos de la fase
+            steps {
+                echo 'Deploying ...'
+            }
+        }
+    }
+}
